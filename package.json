@@ -1,0 +1,15 @@
+{
+  "name": "clidemo",
+  "version": "1.0.0",
+  "bin": "bin/enter",
+  "scripts": {
+    "test": "enter"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^9.4.0",
+    "inquirer": "^8.2.1"
+  }
+}
