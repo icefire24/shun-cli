@@ -2,6 +2,12 @@
 const chalk=require('chalk')
 const program = require("commander");
 const Inquirer = require("inquirer");
+const {
+  getZhuRongRepo,
+  getTagsByRepo,
+}=require("../api/index");
+const { chooseTemplate, handleFolderExist } = require("../lib/create");
+let target=''
 // 解析用户执行时输入的参数
 // process.argv 是 nodejs 提供的属性
 // npm run server --port 3000
@@ -20,7 +26,8 @@ program
   .option("-f, --force", "overwrite target directory if it exists") // 强制覆盖
   .action((projectName, cmd) => {
     // 处理用户输入create 指令附加的参数
-    require("../lib/create")(projectName, cmd);
+    target=projectName
+    handleFolderExist(projectName, cmd);
   });
 
 program
@@ -47,7 +54,8 @@ program
 });
 
 program.parse(process.argv);
-// program.name("demo").usage(`<command> [option]`).version(`1.0.0`);
+
+chooseTemplate(target)
 
 
 // new Inquirer.prompt([
