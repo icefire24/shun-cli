@@ -1,7 +1,9 @@
 {
   "name": "icefirecli",
   "version": "1.0.0",
-  "bin":"bin/enter",
+  "bin": {
+    "icefirecli": "bin/enter"
+  },
   "scripts": {
     "test": "enter"
   },

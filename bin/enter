@@ -1,15 +1,10 @@
 #! /usr/bin/env node
 const chalk = require("chalk");
 const program = require("commander");
+const inquirer= require("inquirer");
 
 const { handleFolderExist } = require("../lib/create");
-// 解析用户执行时输入的参数
-// process.argv 是 nodejs 提供的属性
-// npm run server --port 3000
-// 后面的 --port 3000 就是用户输入的参数
-// console.log(`hello ${chalk.blue("world")}`);
-// console.log(chalk.blue.bgRed.bold("Hello world!"));
-// console.log(chalk.green("I am a green line " + chalk.blue.underline.bold("with a blue substring") + " that becomes green again!"));
+
 //commander 提供了 version 方法，.version() 方法可以设置版本
 program.version(`icefirecli ${require("../package.json").version}`);
 // name 是配置脚手架名称
@@ -24,15 +19,5 @@ program
     handleFolderExist(projectName, cmd);
   });
 
-program
-  .command("config [value]") // config 命令
-  .description("inspect and modify the config")
-  .option("-g, --get <key>", "get value by key")
-  .option("-s, --set <key> <value>", "set option[key] is value")
-  .option("-d, --delete <key>", "delete option by key")
-  .action((value, keys) => {
-    // value 可以取到 [value] 值，keys会获取到命令参数
-    console.log(value, keys);
-  });
 
 program.parse(process.argv);
