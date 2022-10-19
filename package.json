@@ -1,11 +1,11 @@
 {
   "name": "icefirecli",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "bin": {
     "icefirecli": "bin/enter"
   },
   "scripts": {
-    "test": "enter"
+    "test": "icefirecli create demo"
   },
   "main": "index.js",
   "license": "MIT",
