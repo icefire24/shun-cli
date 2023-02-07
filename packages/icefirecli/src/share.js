@@ -34,11 +34,11 @@ function downTemplate(template, outdir) {
 /**项目拉取成功后提示
  * @param {string} outdir 项目文件夹
  */
-function successCallback(outdir) {
+function successCallback(outdir,package) {
   console.log(chalk.blue.bold('项目拉取成功'))
   console.log(chalk.blue.bold(`cd ${outdir}`))
-  console.log(chalk.blue.bold(`yarn install`))
-  console.log(chalk.blue.bold(`yarn dev`))
+  console.log(chalk.blue.bold(`${package} install`))
+  console.log(chalk.blue.bold(`${package} dev`))
 }
 
 /**

@@ -8,6 +8,15 @@ let question = {
       message: '请输入项目目录',
     },
   ],
+  package: [
+    {
+      name: 'package',
+      type: 'list',
+      default: 'pnpm',
+      message: '请选择包管理器',
+      choices:['npm','yarn','pnpm']
+    },
+  ],
   frame: [
     {
       name: 'frame',

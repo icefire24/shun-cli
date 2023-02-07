@@ -17,15 +17,17 @@ const initQuestion = async function () {
     if (!isOverwrite) {
       return false
     } else {
+      let package=await createInquirer(question.package)
       let frame = await createInquirer(question.frame)
       let features = await createInquirer(question.features)
       return true
     }
   } else {
+    let package=await createInquirer(question.package)
     let frame = await createInquirer(question.frame)
     let features = await createInquirer(question.features)
     return true
   }
 }
 
-module.exports = { initQuestion, createInquirer, options }
+module.exports = { initQuestion, createInquirer }
