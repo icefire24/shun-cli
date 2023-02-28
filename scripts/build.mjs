@@ -1,5 +1,5 @@
 import * as esbuild from 'esbuild'
-
+//todo: 1. 生成esm模块
 await esbuild.build({
   bundle: true,
   entryPoints: ['packages/icefirecli/src/index.js'],
@@ -12,21 +12,4 @@ await esbuild.build({
   external: ['prettier'],
   treeShaking: true,
   // minify: true,
-  plugins: [
-    {
-      name: 'alias',
-      setup({ onResolve, resolve }) {
-        onResolve(
-          { filter: /^prompts$/, namespace: 'file' },
-          async ({ importer, resolveDir }) => {
-            const result = await resolve('prompts/lib/index.js', {
-              importer,
-              resolveDir
-            })
-            return result
-          }
-        )
-      }
-    }
-  ]
 })

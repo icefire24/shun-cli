@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"node ./scripts/build.mjs"
+    "build": "node ./scripts/build.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "esbuild": "^0.17.6"
+    "esbuild": "^0.17.6",
+    "eslint": "^8.35.0",
+    "eslint-plugin-ice": "workspace:^0.0.0"
   }
 }
