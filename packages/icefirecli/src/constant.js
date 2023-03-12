@@ -43,7 +43,7 @@ let question = {
       name: 'features',
       type: 'checkbox',
       message: 'Check the features needed for your project:',
-      choices: ['prettier', 'eslint'],
+      choices: ['prettier', 'eslint','cesium','element'],
     },
   ],
 }

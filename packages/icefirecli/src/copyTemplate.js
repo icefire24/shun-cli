@@ -2,7 +2,7 @@ const fs = require('fs-extra')
 const path = require('path')
 const { options } = require('./constant')
 const copyTemplate = function () {
-  let templatePath = path.resolve(__dirname, `template/${options.frame}`)
+  let templatePath = path.resolve(__dirname, `../template/${options.frame}`)
   let destPath = path.resolve(process.cwd(), options.projectName)
   fs.copySync(
     templatePath,
@@ -24,6 +24,9 @@ const getFilterFile = function () {
   if (!options.features.includes('eslint')) {
     fs.remove(path.resolve(templatePath, '.eslintrc.json'))
   }
+  // if (!options.features.includes('cesium')) {
+  //   fs.remove(path.resolve(templatePath, '.eslintrc.json'))
+  // }
   return true
 }
 module.exports = { copyTemplate }
