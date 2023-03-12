@@ -39793,7 +39793,6 @@ var require_copyTemplate = __commonJS({
     var { options: options2 } = require_constant2();
     var copyTemplate2 = function() {
       let templatePath = path.resolve(__dirname, `../template/${options2.frame}`);
-      console.log(templatePath);
       let destPath = path.resolve(process.cwd(), options2.projectName);
       fs.copySync(
         templatePath,
@@ -40571,15 +40570,16 @@ var require_package2 = __commonJS({
   "packages/icefirecli/package.json"(exports, module2) {
     module2.exports = {
       name: "icefirecli",
-      version: "1.0.7",
+      version: "1.0.9",
       bin: {
-        icecli: "./outfile.cjs"
+        icecli: "src/index.js"
       },
       scripts: {
         test: "node src/index.js"
       },
       files: [
-        "outfile.cjs"
+        "src",
+        "template"
       ],
       main: "index.js",
       license: "MIT",
@@ -40610,7 +40610,6 @@ var { loading, successCallback } = require_share2();
 var { options } = require_constant2();
 console.log(chalk.bold(gradient.morning("\n\u{1F680} Welcome to use icefirecli to create custom-app")));
 async function init() {
-  console.log(333);
   let isOverwrite = await initQuestion();
   if (isOverwrite) {
     loading("\u6B63\u5728\u62C9\u53D6\u6A21\u677F", copyTemplate);

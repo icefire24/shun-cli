@@ -1,14 +1,15 @@
 {
   "name": "icefirecli",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "bin": {
-    "icecli": "./outfile.cjs"
+    "icecli": "src/index.js"
   },
   "scripts": {
     "test": "node src/index.js"
   },
   "files": [
-    "outfile.cjs"
+    "src",
+    "template"
   ],
   "main": "index.js",
   "license": "MIT",
