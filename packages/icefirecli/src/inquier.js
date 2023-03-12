@@ -11,7 +11,6 @@ const initQuestion = async function () {
   console.log('projectName: ', projectName)
 
   let isOverwrite = handleFolderExist(projectName)
-  console.log('isOverwrite: ', isOverwrite)
   if (isOverwrite) {
     let { isOverwrite } = await createInquirer(question.overWrite)
     if (!isOverwrite) {

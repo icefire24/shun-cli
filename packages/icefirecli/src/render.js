@@ -15,9 +15,9 @@ const render=function (handlePath){
     let code=fs.readFileSync(readFilePath,"utf-8")
     // let outputFilePath=path.join(fileInfo.dir,fileInfo.name)
     let renderCode= ejs.render(code,options)
-    // renderCode=prettier.format(renderCode,{
-    //     parser:"babel",
-    // })
+    renderCode=prettier.format(renderCode,{
+        parser:fileInfo.ext.slice(1)==="ts"?"typescript":"json",
+    })
     fs.writeFileSync(filepath,renderCode)
     fs.removeSync(readFilePath)
     

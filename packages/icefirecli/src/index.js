@@ -9,6 +9,7 @@ const  {loading,successCallback}=require("./share")
 const { options } = require('./constant')
 console.log(chalk.bold(gradient.morning('\n🚀 Welcome to use icefirecli to create custom-app')))
 async function init() {
+  console.log(333);
   let isOverwrite = await initQuestion()
   if (isOverwrite) {
     loading('正在拉取模板', copyTemplate)

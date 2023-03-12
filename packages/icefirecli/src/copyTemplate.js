@@ -22,7 +22,7 @@ const getFilterFile = function () {
     fs.remove(path.resolve(templatePath, '.prettierrc.js'))
   }
   if (!options.features.includes('eslint')) {
-    fs.remove(path.resolve(templatePath, '.eslintrc.json'))
+    fs.remove(path.resolve(templatePath, '.eslintrc.js'))
   }
   // if (!options.features.includes('cesium')) {
   //   fs.remove(path.resolve(templatePath, '.eslintrc.json'))
