@@ -5,7 +5,6 @@ const path = require('path')
 const chalk = require('chalk')
 const handleFolderExist = function (projectName) {
   let absolutePath = path.join(process.cwd(), projectName)
-  console.log('absolutePath: ', absolutePath);
   return existsSync(absolutePath)
 }
 async function loading(message, fn, ...args) {

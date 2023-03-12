@@ -1,15 +1,10 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-  "changelog": [
-    "@changesets/changelog-github",
-    {
-      "repo": "git@github.com:icefiresong24/icefire-cli.git"
-    }
-  ],
+  "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [],
   "linked": [],
-  "access": "restricted",
+  "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": []

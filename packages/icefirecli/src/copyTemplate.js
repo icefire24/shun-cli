@@ -3,6 +3,7 @@ const path = require('path')
 const { options } = require('./constant')
 const copyTemplate = function () {
   let templatePath = path.resolve(__dirname, `../template/${options.frame}`)
+  console.log(templatePath);
   let destPath = path.resolve(process.cwd(), options.projectName)
   fs.copySync(
     templatePath,
