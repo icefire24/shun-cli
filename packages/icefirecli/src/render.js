@@ -3,11 +3,13 @@ const path = require("path")
 const fs = require("fs-extra")
 const prettier = require("prettier")
 const { options } = require("./constant")
-const rendFile = [
+const rendFile = options.frame == 'vue' ? [
     "package.json",
     "vite.config.ts",
     "src/main.ts",
-]
+] : ["package.json",
+    "vite.config.ts",
+    "src/main.tsx",]
 const render = function (handlePath) {
     let filepath = path.resolve(process.cwd(), options.projectName, handlePath)
     let fileInfo = path.parse(filepath)

@@ -1,5 +1,11 @@
 # icefirecli
 
+## 2.0.0
+
+### Major Changes
+
+- feat:支持 unocss
+
 ## 1.0.10
 
 ### Patch Changes

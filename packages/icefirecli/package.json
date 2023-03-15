@@ -1,6 +1,6 @@
 {
   "name": "icefirecli",
-  "version": "1.0.10",
+  "version": "2.0.0",
   "bin": {
     "icecli": "src/index.js"
   },

@@ -38375,7 +38375,7 @@ var require_constant2 = __commonJS({
           name: "features",
           type: "checkbox",
           message: "Check the features needed for your project:",
-          choices: ["prettier", "eslint", "cesium", "element"]
+          choices: options2.frame == "vue" ? ["prettier", "eslint", "cesium", "element"] : ["prettier", "eslint", "cesium", "antd", "unocss"]
         }
       ]
     };
@@ -40551,7 +40551,7 @@ var require_render = __commonJS({
       let code = fs.readFileSync(readFilePath, "utf-8");
       let renderCode = ejs.render(code, options2);
       renderCode = prettier.format(renderCode, {
-        parser: fileInfo.ext.slice(1) === "ts" ? "typescript" : "json"
+        parser: fileInfo.ext.slice(1) !== "json" ? "typescript" : "json"
       });
       fs.writeFileSync(filepath, renderCode);
       fs.removeSync(readFilePath);
@@ -40570,7 +40570,7 @@ var require_package2 = __commonJS({
   "packages/icefirecli/package.json"(exports, module2) {
     module2.exports = {
       name: "icefirecli",
-      version: "1.0.9",
+      version: "1.0.10",
       bin: {
         icecli: "src/index.js"
       },
