@@ -1,31 +1,43 @@
 {
-  "name": "react",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    <% if (features.includes('prettier')) { -%>
-    "prettier": "^2.8.3",
-    <% } -%>
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.1.0",
-    <% if (features.includes('eslint')) { -%>
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "eslint": "^8.33.0",
-    "eslint-plugin-react": "^7.32.2",
-    <% } -%>
-    "typescript": "^4.6.4",
-    "vite": "^3.1.0"
-  }
-}
+"name": "react-demo",
+"private": true,
+"version": "0.0.0",
+"type": "module",
+"scripts": {
+"dev": "vite",
+"build": "tsc && vite build",
+"preview": "vite preview"
+},
+"dependencies": {
+  <% if (features.includes('antd') ){ %>
+  "antd": "^5.3.1",
+  <% } %>
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0",
+    <% if (features.includes('unocss') ){ %>
+      "unocss": "^0.50.4",
+      "@unocss/reset": "^0.50.4",
+      <% } %>
+      <% if (features.includes('cesium') ){ %>
+        "cesium": "^1.103.0",
+          "vite-plugin-cesium": "^1.2.22"
+          <% } %>
+            },
+            "devDependencies": {
+            "@types/react": "^18.0.27",
+            "@types/react-dom": "^18.0.10",
+            "@vitejs/plugin-react": "^3.1.0",
+            <% if(features.includes('eslint')){ %>
+              "eslint-plugin-react": "^7.32.2",
+              "@typescript-eslint/eslint-plugin": "^5.55.0",
+              "@typescript-eslint/parser": "^5.55.0",
+              "eslint": "^8.36.0",
+              <% } %>
+                <% if(features.includes('prettier')){ %>
+                  "prettier": "^2.8.4",
+                  <% } %>
+                    "typescript": "^4.9.3",
+                    "vite": "^4.1.0"
+                    }
+                    }

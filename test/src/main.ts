@@ -1,9 +1,12 @@
-import { createApp } from "vue";
-import "./style.css";
-import App from "./App.vue";
-import "cesium/Build/Cesium/Widgets/widgets.css";
-import ElementPlus from "element-plus";
-import "element-plus/dist/index.css";
-let app = createApp(App);
-app.use(ElementPlus);
-app.mount("#app");
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+import "antd/dist/reset.css";
+
+import "@unocss/reset/tailwind.css";
+import "uno.css";
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <App />
+);

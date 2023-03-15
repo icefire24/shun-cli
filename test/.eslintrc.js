@@ -1,9 +1,8 @@
-{
-    "root": true,
+module.exports = {
     "env": {
         "browser": true,
-        "commonjs": true,
-        "es2021": true
+        "es2021": true,
+        "node": true
     },
     "extends": [
         "eslint:recommended",
@@ -14,12 +13,14 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
     "plugins": [
         "react",
         "@typescript-eslint"
     ],
     "rules": {
+        "react/react-in-jsx-scope": "off",
     }
 }

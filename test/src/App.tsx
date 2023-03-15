@@ -6,9 +6,4 @@ function App() {
     <RouterProvider router={routers}></RouterProvider>
   )
 }
-
-
-
-
-
 export default App

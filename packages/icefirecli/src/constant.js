@@ -43,7 +43,7 @@ let question = {
       name: 'features',
       type: 'checkbox',
       message: 'Check the features needed for your project:',
-      choices: ['prettier', 'eslint','cesium','element'],
+      choices: options.frame=='vue'?['prettier', 'eslint','cesium','element']:['prettier', 'eslint','cesium','antd','unocss'],
     },
   ],
 }

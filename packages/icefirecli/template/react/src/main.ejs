@@ -1,0 +1,13 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+<% if(features.includes('antd')){ %>
+import 'antd/dist/reset.css';
+<% } %>
+<% if(features.includes('unocss')){ %>
+import '@unocss/reset/tailwind.css'
+import 'uno.css'
+<% } %>
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <App />
+)
