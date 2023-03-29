@@ -5,7 +5,7 @@
   "main": "outfile.cjs",
   "scripts": {
     "test": "node packages/icefirecli/src/index.js",
-    "test2": "node packages/icefirecli/outfile.cjs",
+    "test2": "node packages/icefirecli/dist/outfile.cjs",
     "build": "node ./scripts/build.mjs",
     "changeset": "changeset",
     "changeset:version": "changeset version",

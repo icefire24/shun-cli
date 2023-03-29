@@ -39792,7 +39792,7 @@ var require_copyTemplate = __commonJS({
     var path = require("path");
     var { options: options2 } = require_constant2();
     var copyTemplate2 = function() {
-      let templatePath = path.resolve(__dirname, `template/${options2.frame}`);
+      let templatePath = path.resolve(__dirname, `../template/${options2.frame}`);
       let destPath = path.resolve(process.cwd(), options2.projectName);
       fs.copySync(
         templatePath,
@@ -40582,7 +40582,7 @@ var require_package2 = __commonJS({
         test: "node src/index.js"
       },
       files: [
-        "outfile.cjs",
+        "dist",
         "template"
       ],
       main: "index.js",
@@ -40591,12 +40591,9 @@ var require_package2 = __commonJS({
         chalk: "^4.0.0",
         commander: "^9.4.0",
         ejs: "^3.1.8",
-        figlet: "^1.5.2",
         "fs-extra": "^10.1.0",
-        gradient: "^0.2.0",
         "gradient-string": "^2.0.2",
         inquirer: "^8.2.1",
-        ora: "^5.0.0",
         prettier: "^2.8.4"
       }
     };
@@ -40616,9 +40613,14 @@ console.log(chalk.bold(gradient.morning("\n\u{1F680} Welcome to use icefirecli t
 async function init() {
   let isOverwrite = await initQuestion();
   if (isOverwrite) {
-    loading("\u6B63\u5728\u62C9\u53D6\u6A21\u677F", copyTemplate);
-    renderFile();
-    successCallback(options.projectName, options.package);
+    try {
+      console.log(chalk.blue.bold("\u6B63\u5728\u62C9\u53D6\u6A21\u677F"));
+      copyTemplate();
+      renderFile();
+      successCallback(options.projectName, options.package);
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 init();
@@ -40653,4 +40655,3 @@ ejs/lib/ejs.js:
    * @license {@link http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0}
    *)
 */
-//# sourceMappingURL=outfile.cjs.map

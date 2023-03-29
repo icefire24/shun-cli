@@ -1,0 +1,5 @@
+---
+"icefirecli": patch
+---
+
+test

@@ -1,0 +1,5 @@
+---
+"@ice/cli": minor
+---
+
+minor

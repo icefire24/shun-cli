@@ -3,9 +3,9 @@ import * as esbuild from 'esbuild'
 await esbuild.build({
   bundle: true,
   entryPoints: ['packages/icefirecli/src/index.js'],
-  outfile: 'packages/icefirecli/outfile.cjs',
+  outfile: 'packages/icefirecli/dist/outfile.cjs',
   format: 'cjs',
-  sourcemap: true,
+  sourcemap: false,
   platform: 'node',
   target: 'node16',
   resolveExtensions:['.js','.ts'],

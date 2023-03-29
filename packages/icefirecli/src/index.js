@@ -5,15 +5,20 @@ const { initQuestion } = require('./inquier')
 const gradient = require('gradient-string')
 const { copyTemplate } = require('./copyTemplate')
 const { renderFile } = require('./render')
-const  {loading,successCallback}=require("./share")
+const { loading, successCallback } = require("./share")
 const { options } = require('./constant')
 console.log(chalk.bold(gradient.morning('\n🚀 Welcome to use icefirecli to create custom-app')))
 async function init() {
   let isOverwrite = await initQuestion()
   if (isOverwrite) {
-    loading('正在拉取模板', copyTemplate)
-    renderFile()
-    successCallback(options.projectName,options.package)
+    try {
+      console.log(chalk.blue.bold('正在拉取模板'))
+      copyTemplate()
+      renderFile()
+      successCallback(options.projectName, options.package)
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 init()
