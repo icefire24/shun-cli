@@ -4,8 +4,8 @@
   "description": "A CLI for creating a new vue/cesium project",
   "main": "outfile.cjs",
   "scripts": {
-    "test": "node packages/icefirecli/src/index.js",
-    "test2": "node packages/icefirecli/dist/outfile.cjs",
+    "test": "node packages/icecli/src/index.js",
+    "test2": "node packages/icecli/dist/outfile.cjs",
     "build": "node ./scripts/build.mjs",
     "changeset": "changeset",
     "changeset:version": "changeset version",

@@ -2,8 +2,8 @@ import * as esbuild from 'esbuild'
 //todo: 1. 生成esm模块
 await esbuild.build({
   bundle: true,
-  entryPoints: ['packages/icefirecli/src/index.js'],
-  outfile: 'packages/icefirecli/dist/outfile.cjs',
+  entryPoints: ['packages/icecli/src/index.js'],
+  outfile: 'packages/icecli/dist/outfile.cjs',
   format: 'cjs',
   sourcemap: false,
   platform: 'node',
@@ -11,5 +11,5 @@ await esbuild.build({
   resolveExtensions:['.js','.ts'],
   external: ['prettier'],
   treeShaking: true,
-  // minify: true,
+  minify: true,
 })

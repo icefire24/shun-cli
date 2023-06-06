@@ -12,6 +12,7 @@
 "vue": "^3.2.41",
 <% if(features.includes('unocss')){ %>
   "unocss": "^0.50.4",
+  "@unocss/reset": "^0.53.0",
   <% } %>
     <% if (features.includes('cesium')) { -%>
       "cesium": "^1.103.0",
@@ -23,6 +24,8 @@
             },
             "devDependencies": {
             "@vitejs/plugin-vue": "^3.2.0",
+            "unplugin-auto-import": "^0.16.4",
+            "unplugin-vue-components": "^0.25.1",
             <% if (features.includes('prettier')) { -%>
               "prettier": "^2.8.3",
               <% } -%>

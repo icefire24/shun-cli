@@ -5,7 +5,7 @@ const { initQuestion } = require('./inquier')
 const gradient = require('gradient-string')
 const { copyTemplate } = require('./copyTemplate')
 const { renderFile } = require('./render')
-const { loading, successCallback } = require("./share")
+const { successCallback } = require("./share")
 const { options } = require('./constant')
 console.log(chalk.bold(gradient.morning('\n🚀 Welcome to use icefirecli to create custom-app')))
 async function init() {

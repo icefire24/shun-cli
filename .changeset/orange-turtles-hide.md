@@ -1,5 +1,0 @@
----
-"icefirecli": major
----
-
-major
