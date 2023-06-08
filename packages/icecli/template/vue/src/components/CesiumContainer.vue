@@ -2,12 +2,12 @@
   <div ref="earthContainer" id="cesiumContainer"></div>
 </template>
 <script setup lang="ts">
-import * as Cesium from 'cesium'
-import { ref, onMounted } from 'vue'
-let earthContainer = ref(null)
+import * as Cesium from "cesium";
+import { ref, onMounted } from "vue";
+let earthContainer = ref(null);
 
 onMounted(() => {
-  let viewer
+  let viewer;
   viewer = new Cesium.Viewer(earthContainer.value!, {
     homeButton: false, //是否显示主页按钮
     sceneModePicker: false, //是否显示场景按钮
@@ -20,40 +20,15 @@ onMounted(() => {
     geocoder: false, //是否显示地名查找控件
     fullscreenButton: true, //是否全屏按钮
     shouldAnimate: false,
-  })
+  });
 
-  viewer.cesiumWidget.creditContainer.style.display = 'none' // 去除版权信息
-  
-  pickEvent(viewer)
-})
-const load3dtile = function (viewer) {
-  const tileset = viewer.scene.primitives.add(
-    new Cesium.Cesium3DTileset({
-      url: 'map/tileset.json',
-    })
-  )
-  tileset.readyPromise.then(function (tileset: any) {
-    console.log('tileset: ', tileset)
-    viewer.flyTo(tileset)
-  })
-}
-const pickEvent = function (viewer) {
-  let handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas)
-  handler.setInputAction(function (movement: any) {
-    let pickedObject = viewer.scene.pick(movement.position)
-    if (Cesium.defined(pickedObject)) {
-      console.log('pickedObject: ', pickedObject)
-    }
-  }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
-}
+  viewer.cesiumWidget.creditContainer.style.display = "none"; // 去除版权信息
+
+});
 </script>
 <style scoped>
-.container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  transform-origin: left top;
-  z-index: 999;
+#cesiumContainer {
+  width: 100%;
+  height: 100%;
 }
 </style>

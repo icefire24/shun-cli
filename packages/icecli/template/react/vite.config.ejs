@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import autoImport from 'unplugin-auto-import/vite'
 <% if(features.includes('unocss')) { -%>
   import UnoCSS from 'unocss/vite'
   import { presetAttributify, presetUno } from 'unocss'
@@ -13,6 +14,10 @@ import react from '@vitejs/plugin-react'
             open:true,
           },
         plugins: [react(),
+        autoImport({
+          imports: ['react'],
+          dts: 'src/auto-imports.d.ts',
+        }),
         <% if(features.includes('unocss')) { -%>
           UnoCSS({
           presets:[presetAttributify(), presetUno()]

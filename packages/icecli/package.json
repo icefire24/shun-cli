@@ -1,11 +1,11 @@
 {
-  "name": "icecli",
+  "name": "shun-cli",
   "version": "1.0.0",
   "bin": {
-    "icecli": "src/index.js"
+    "shun": "dist/outfile.cjs"
   },
   "scripts": {
-    "test": "node src/index.js"
+    "test": "node dist/outfile.cjs"
   },
   "files": [
     "dist",
