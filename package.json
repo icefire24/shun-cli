@@ -1,6 +1,6 @@
 {
-  "name": "icefire-cli",
-  "version": "1.0.0",
+  "name": "shun-cli",
+  "version": "1.0.1",
   "description": "A CLI for creating a new vue/cesium project",
   "main": "outfile.cjs",
   "scripts": {

@@ -11,5 +11,6 @@ await esbuild.build({
   resolveExtensions:['.js','.ts'],
   external: ['prettier'],
   treeShaking: true,
+  drop: ["console", "debugger"],
   minify: true,
 })

@@ -18,11 +18,10 @@ const copyTemplate = function () {
 }
 const getFilterFile = function () {
   let templatePath = path.resolve(process.cwd(), options.projectName)
-  if (!options.features.includes('prettier')) {
-    fs.remove(path.resolve(templatePath, '.prettierrc.js'))
+  if (!options.features.includes('prettier')) {    fs.remove(path.resolve(templatePath, '.prettierrc.cjs'))
   }
   if (!options.features.includes('eslint')) {
-    fs.remove(path.resolve(templatePath, '.eslintrc.js'))
+    fs.remove(path.resolve(templatePath, '.eslintrc.cjs'))
   }
   return true
 }
