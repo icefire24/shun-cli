@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
 <% if(features.includes('unocss')){ %>
     import '@unocss/reset/tailwind.css'
     import 'uno.css'
@@ -7,12 +8,19 @@ import App from './App.vue'
         <% if (features.includes('cesium')) { -%>
             import "cesium/Build/Cesium/Widgets/widgets.css";
             <% } -%>
-                <% if (features.includes('element')) { -%>
-                    import ElementPlus from 'element-plus'
-                    import 'element-plus/dist/index.css'
+                <% if (features.includes('pinia')) { -%>
+                    import store from '@/store'
                     <% } -%>
-                        let app=createApp(App)
                         <% if (features.includes('element')) { -%>
-                            app.use(ElementPlus)
+                            import ElementPlus from 'element-plus'
+                            import 'element-plus/dist/index.css'
                             <% } -%>
-                                app.mount('#app')
+                                let app=createApp(App)
+                                <% if (features.includes('element')) { -%>
+                                    app.use(ElementPlus)
+                                    <% } -%>
+                                        <% if (features.includes('pinia')) { -%>
+                                            app.use(pinia)
+                                            <% } -%>
+                                            app.use(router)
+                                                app.mount('#app')

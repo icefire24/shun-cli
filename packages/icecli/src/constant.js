@@ -31,7 +31,7 @@ let question = {
         { title: 'react', value: 'react' },
 
       ],
-      onSubmit:(prompt,answer) => {
+      onSubmit: (prompt, answer) => {
         options.frame = answer
       }
     },
@@ -57,6 +57,8 @@ let question = {
         { title: 'eslint', value: 'eslint' },
         { title: 'cesium', value: 'cesium' },
         { title: 'element', value: 'element' },
+        { title: 'unocss', value: 'unocss' },
+        { title: 'pinia', value: 'pinia' },
       ] : [
         { title: 'prettier', value: 'prettier' },
         { title: 'eslint', value: 'eslint' },

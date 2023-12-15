@@ -24,6 +24,9 @@ const getFilterFile = function () {
   if (!options.features.includes('eslint')) {
     fs.remove(path.resolve(templatePath, '.eslintrc.js'))
   }
+  if (!options.features.includes('pinia')) {
+    fs.remove(path.resolve(templatePath, 'store'))
+  }
   return true
 }
 module.exports = { copyTemplate }
