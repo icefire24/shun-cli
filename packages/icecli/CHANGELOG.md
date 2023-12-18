@@ -1,5 +1,11 @@
 # icefirecli
 
+## 1.1.0
+
+### Minor Changes
+
+- 添加 pinia
+
 ## 2.0.0
 
 ### Major Changes

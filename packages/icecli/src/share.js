@@ -1,8 +1,9 @@
 const { existsSync } = require('fs-extra')
-const ora = require('ora')
+const ora = import('ora')
 const fs = require('fs-extra')
 const path = require('path')
 const chalk = require('chalk')
+const gradient = require('gradient-string')
 const handleFolderExist = function (projectName) {
   let absolutePath = path.join(process.cwd(), projectName)
   return existsSync(absolutePath)
@@ -35,7 +36,7 @@ function downTemplate(template, outdir) {
  * @param {string} outdir 项目文件夹
  */
 function successCallback(outdir,package) {
-  console.log(chalk.blue.bold('项目拉取成功'))
+  console.log(gradient.rainbow('项目拉取成功,运行以下命令启动项目'))
   console.log(chalk.blue.bold(`cd ${outdir}`))
   console.log(chalk.blue.bold(`${package} install`))
   console.log(chalk.blue.bold(`${package} dev`))

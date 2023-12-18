@@ -16,17 +16,21 @@ const copyTemplate = function () {
     }
   )
 }
-const getFilterFile = function () {
+const getFilterFile = function (src, dest) {
   let templatePath = path.resolve(process.cwd(), options.projectName)
-  if (!options.features.includes('prettier')) {
-    fs.remove(path.resolve(templatePath, '.prettierrc.js'))
+  if (!options.features.includes('prettier') && src.includes('.prettierrc.js')) {
+    return false;
   }
-  if (!options.features.includes('eslint')) {
-    fs.remove(path.resolve(templatePath, '.eslintrc.js'))
+  if (!options.features.includes('eslint') && src.includes('.eslintrc.js')) {
+    return false;
   }
-  if (!options.features.includes('pinia')) {
-    fs.remove(path.resolve(templatePath, 'store'))
+  
+  if (!options.features.includes('pinia') && src.includes('store')) {
+    return false;
   }
-  return true
+  
+  
+  
+  return true;
 }
 module.exports = { copyTemplate }
