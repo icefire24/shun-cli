@@ -1,15 +1,9 @@
-import {createBrowserRouter,RouteObject} from 'react-router-dom'
-import BackManage from '../views/BackManage'
-import BackMap from '../views/Home'
+import { createBrowserRouter, RouteObject } from 'react-router-dom'
+import Home from '../views/Home'
 const routes: RouteObject[] = [
     {
         path: '/',
-        element: <BackMap />
+        element: <Home />
 
-    },
-    {
-        path: '/back',
-        element: <BackManage />
-    }
-]
+    }]
 export default createBrowserRouter(routes)

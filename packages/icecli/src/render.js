@@ -23,7 +23,9 @@ function renderFile() {
         "src/main.ts",
     ] : ["package.json",
         "vite.config.ts",
-        "src/main.tsx",]
+            "src/main.tsx",
+            "src/views/Home.tsx"
+        ]
     rendFiles.forEach((item) => {
         render(item)
     })

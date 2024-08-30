@@ -1,0 +1,13 @@
+<% if(features.includes('cesium')){ %>
+import CesiumMap from './CesiumMap'
+<% } %>
+function Home() {
+    return (<div className='w-full h-full relative'>
+        Welcome To ICE
+        <% if(features.includes('cesium')){ %>
+            < CesiumMap />
+        <% } %>
+    </div>);
+}
+
+export default Home;
