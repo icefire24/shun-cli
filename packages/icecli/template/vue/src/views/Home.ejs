@@ -1,0 +1,12 @@
+<template>
+  <div>
+    <% if (features.includes('cesium')) { -%>
+    <CesiumContainer></CesiumContainer>
+    <% } else { %> hello world <% } %>
+  </div>
+</template>
+
+<script setup lang="ts">
+import CesiumContainer from "@/components/CesiumContainer.vue";
+</script>
+<style scoped lang="scss"></style>
